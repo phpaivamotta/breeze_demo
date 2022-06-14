@@ -43,48 +43,60 @@
                         <table class="min-w-full">
                             <thead class="bg-white border-b">
                                 <tr>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold">
                                         ID
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold">
                                         Title
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold">
                                         Country
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold">
                                         City
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold">
                                         Salary
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold">
                                         Applied On
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($jobs as $job)
-                                <tr class='{{ ($loop->index % 2) ? "bg-white border-b" : "bg-gray-100 border-b"  }}' style="text-align:left">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {{ $job->id }}
-                                    </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $job->title }}
-                                    </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $job->country }}
-                                    </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $job->city }}
-                                    </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $job->salary }}
-                                    </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $job->created_at  }}
-                                    </td>
-                                </tr>
+                                    <tr class='{{ ($loop->index % 2) ? "bg-white border-b" : "bg-gray-100 border-b"  }}' style="text-align:left">
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                            <a href="/jobs/{{ $job->title  }}">
+                                                {{ $job->id }}
+                                            </a>
+                                        </td>
+                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            <a href="/jobs/{{ $job->title  }}">
+                                                {{ $job->title }}
+                                            </a>
+                                        </td>
+                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            <a href="/jobs/{{ $job->title  }}">
+                                                {{ $job->country }}
+                                            </a>
+                                        </td>
+                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            <a href="/jobs/{{ $job->title  }}">
+                                                {{ $job->city }}
+                                            </a>
+                                        </td>
+                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            <a href="/jobs/{{ $job->title  }}">
+                                                {{ $job->salary }}
+                                            </a>
+                                        </td>
+                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            <a href="/jobs/{{ $job->title  }}">
+                                                {{ $job->created_at }}
+                                            </a>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
