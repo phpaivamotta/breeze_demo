@@ -2,10 +2,23 @@
 <html lang="en">
 
     <body>
-        
-        <div>{{ $job->title }}</div>
 
-        <div>{{ $job->description }}</div>
+        <div>
+
+            <div>
+                <h1>{{ $job->title }}</h1>
+                <ul>
+                    <li>{{$job->country}}</li>
+                    <li>{{$job->city}}</li>
+                    <li>{{$job->salary}}</li>
+                </ul>   
+            </div>
+
+            <div class="">
+                <p> {{ $job->description }} </p>
+            </div>
+
+        </div>
 
     </body>
 
