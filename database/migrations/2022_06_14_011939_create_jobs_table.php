@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('city');
             $table->text('description');
             $table->string('salary')->nullable();
+            $table->string('slug')->nullable(); // make this equal to title but separated by dashes
             $table->timestamps();
         });
     }
