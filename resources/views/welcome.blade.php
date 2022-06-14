@@ -7,6 +7,7 @@
 
     <title>Breeze Demo</title>
 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -19,7 +20,7 @@
 </head>
 
 <body class="antialiased">
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0" style="text-align:right">
+    <div style="text-align:right">
         @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
@@ -33,39 +34,41 @@
             @endauth
         </div>
         @endif
-    </div>
 
-    <!-- Tailwind Table -->
-    <div class="flex flex-col">
-        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden">
-                    <table class="min-w-full">
-                        <thead class="bg-white border-b">
-                            <tr>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Title
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Country
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    City
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Description
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Salary
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Applied On
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($jobs as $job)
-                                <tr class='{{ ($loop->index % 2) ? "bg-white border-b" : "bg-gray-100 border-b"  }}'>
+        <!-- Tailwind Table -->
+        <div class="flex flex-col py-8">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-hidden">
+                        <table class="min-w-full">
+                            <thead class="bg-white border-b">
+                                <tr>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        ID
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        Title
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        Country
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        City
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        Description
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        Salary
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        Applied On
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($jobs as $job)
+                                <tr class='{{ ($loop->index % 2) ? "bg-white border-b" : "bg-gray-100 border-b"  }}' style="text-align:left">
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         {{ $job->id }}
                                     </td>
@@ -88,13 +91,15 @@
                                         {{ $job->created_at  }}
                                     </td>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
